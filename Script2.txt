@@ -1,0 +1,25 @@
+WIN: 1
+LOSS: 00, 01
+START#
+You stand in front of a cave.
+In the LEFT side is a dangerous dragon,
+and in the RIGHT side is a beautiful treasure.
+END
+START0#
+You enter the left side of the cave.
+You are now face to face with a dragon!
+You can either RUN from the dragon,
+or you can FIGHT the dragon.
+END
+START00#
+You run from the dragon, and you live to see another day!
+Except you are still broke, which sucks.
+END
+START01#
+You try and fight the dragon,
+but you are weak and die instantly.
+END
+START1#
+You enter the right side of the cave and find
+a magnificent treasure!
+END

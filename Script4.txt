@@ -1,0 +1,35 @@
+WIN: 01, 10
+LOSS: 00, 11
+START#
+You stand in front of a tunnel.
+On your RIGHT is an evil spider,
+and on your LEFT is a deadly dragon.
+END
+START0#
+You enter the right side of the tunnel,
+and you come face to face with a giant spider!
+You can either HIDE from the giant spider,
+or you can RUN from the giant spider.
+END
+START00#
+You try and hide from the spider,
+but he has lots of eyes and easily finds you.
+END
+START01#
+You decide to run from the spider,
+and you manage to survive the ordeal!
+END
+START1#
+You enter the left side of the tunnel.
+You are now face to face with a dragon!
+You can either RUN from the dragon,
+or you can FIGHT the dragon.
+END
+START10#
+You decide to run from the dragon,
+and are successfully able to escape his fiery breath!
+END
+START11#
+You try and fight the dragon,
+only to be gobbled up and eaten for dinner!
+END

@@ -1,0 +1,16 @@
+WIN:beautiful,beautiful,bright,bright,bright,bright,bright,bright,bright,bright,cobweb,cobweb,cobweb,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,either,either,either,either,either,either,either,either,either,either,either,either,either,either,either,either,either,evil,evil,evil,evil,evil,evil,evil,giant,giant,giant,giant,giant,giant,giant,giant,giant,giant,gross,gross,gross,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,light,light,light,light,light,light,light,light,right,right,right,right,right,right,right,right,right,right,right,right,right,right,right,right,right,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,run,side,side,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,treasure,treasure,
+
+CWW:beautiful,bright,cobweb,deadly,dragon,either,evil,giant,gross,is,left,light,right,run,side,spider,treasure,
+
+CWWF:('beautiful', 2),('bright', 8),('cobweb', 3),('deadly', 14),('dragon', 28),('either', 17),('evil', 7),('giant', 10),('gross', 3),('is', 34),('left', 17),('light', 8),('right', 17),('run', 24),('side', 2),('spider', 17),('treasure', 2),
+
+Average WW Freq:12.529411764705882
+
+LOSS:cobweb,cobweb,cobweb,dangerous,dangerous,dangerous,dangerous,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,deadly,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,dragon,either,either,either,either,either,either,either,evil,evil,evil,evil,evil,evil,fight,fight,fight,fight,fight,fight,fight,fight,fight,fight,fight,fight,fight,fight,giant,giant,giant,giant,giant,giant,giant,giant,giant,gross,gross,gross,hide,hide,hide,hide,hide,hide,hide,hide,hide,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,is,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,left,right,right,right,right,right,right,run,side,side,side,side,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,spider,
+
+CLW:cobweb,dangerous,deadly,dragon,either,evil,fight,giant,gross,hide,is,left,right,run,side,spider,
+
+CLWF:('cobweb', 3),('dangerous', 4),('deadly', 11),('dragon', 30),('either', 7),('evil', 6),('fight', 14),('giant', 9),('gross', 3),('hide', 9),('is', 24),('left', 18),('right', 6),('run', 1),('side', 4),('spider', 15),
+
+Average LW Freq:10.25
+

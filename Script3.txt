@@ -1,0 +1,25 @@
+WIN: 1, 00
+LOSS: 01
+START#
+You stand in front of a cave.
+On your LEFT is a gross cobweb,
+and on your RIGHT is a bright light.
+END
+START0#
+You enter the left side of the cave,
+and you come face to face with a giant spider!
+You can either RUN from the giant spider,
+or you can HIDE from the giant spider.
+END
+START00#
+You decide to run from the spider,
+and you manage to survive the ordeal!
+END
+START01#
+You try and hide from the spider,
+but he has lots of eyes and easily finds you.
+END
+START1#
+You enter the right side of the cave,
+and you find a beautiful treasure room!
+END
