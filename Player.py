@@ -7,8 +7,6 @@ from collections import defaultdict
 
 class Player:
     def __init__(self):
-        #can delete i think
-        self._pos = {'Nouns': [], 'Adjectives': [], 'Verbs': [], 'Adverbs': []}
         #a dict of win and loss words, maintained throughout every run
         #of this program (i.e. saved to a file)
         self._dictionary = defaultdict(list)
@@ -77,8 +75,6 @@ class Player:
             else:
                 phrases.append(line)
                 line = []
-        #not sure why this is here, might be useful?
-        text = nltk.Text(tokens)
         return(phrases)
 
     ''' Name: develop_dict
@@ -100,7 +96,6 @@ class Player:
                 if word[0].isupper():
                     key = word[0]
             inputs[key] = phrase
-        #print(list(inputs.items()))
         return inputs
 
     ''' Name: gather_word_data
@@ -121,16 +116,12 @@ class Player:
                     self._keys[key].append(word[0].lower())
                     if word[1].startswith('NN'):
                         self._outcome_dict[key].append(word[0].lower())
-                        #self._pos['Nouns'].append(word[0])
                     elif word[1].startswith('JJ'):
                         self._outcome_dict[key].append(word[0].lower())
-                        #self._pos['Adjectives'].append(word[0])
                     elif word[1].startswith('VB'):
                         self._outcome_dict[key].append(word[0].lower())
-                        #self._pos['Verbs'].append(word[0])
                     elif word[1].startswith('RB'):
                         self._outcome_dict[key].append(word[0].lower())
-                        #self._pos['Adverbs'].append(word[0])
 
     ''' Name: save_to_dictionary
         Purpose: to save the new and categorized vocabulary from the
@@ -172,12 +163,8 @@ class Player:
         or a random choice when presented with an option.
         Returns: the keyword associated with the decision made, in str form'''
     def decide(self):
-        #print(self._keys)
         self.gather_common_words()
-        #print(self._dictionary)
         self.develop_freq_dict()
-        #print('win freq dict', self._win_freq_dict)
-        #print('loss freq dict', self._loss_freq_dict)
 
         decision = None
 
@@ -203,20 +190,20 @@ class Player:
             lw_freq = float(lw_freq)
             #checks if the average frequency for a word is >= 10
             if random is True:
-                print('1.WORD NOT ACCOUNTED FOR')
+                #print('1.WORD NOT ACCOUNTED FOR')
                 decision = self.random_decision()
             elif ww_freq >= 10.0 and lw_freq >= 10.0:
                 decision = self.educated_decision()
             else:
-                print('ENOUGH WORDS, NOT ENOUGH TESTS.')
+                #print('ENOUGH WORDS, NOT ENOUGH TESTS.')
                 decision = self.random_decision()
         #checks if there are over 50 examples of win and loss words
         elif len(self._dictionary['WIN']) >= 50 and len(self._dictionary['LOSS']) >= 50:
             if random is True:
-                print('2.WORD NOT ACCOUNTED FOR')
+                #print('2.WORD NOT ACCOUNTED FOR')
                 decision = self.random_decision()
             else:
-                print('THE SAMPLE IS LARGE BUT NOT VARIED.')
+                #print('THE SAMPLE IS LARGE BUT NOT VARIED.')
                 decision = self.educated_decision()
         else:
             decision = self.random_decision()
@@ -234,10 +221,10 @@ class Player:
             for word in self._keys[key]:
                 if word in self._dictionary['CWW'] and word in self._dictionary['CLW']:
                     if self._win_freq_dict[word] > 5 + self._loss_freq_dict[word]:
-                        print(word, ' gives +1 from freq disc')
+                        print(word, ' gives +1 from freq dict')
                         score = score + 1
                     elif self._loss_freq_dict[word] > 5 + self._win_freq_dict[word]:
-                        print(word, ' gives -1 from freq disc')
+                        print(word, ' gives -1 from freq dict')
                         score = score - 1
                 elif word in self._dictionary['CWW']:
                     print(word, ' gives +1')
@@ -255,7 +242,6 @@ class Player:
             decision = list(score_dict)[1]
 
         print('EDUCATED CHOICE IS ', str(decision))
-
         return decision
 
     ''' Name: random_decision
@@ -264,8 +250,6 @@ class Player:
     def random_decision(self):
         keys = [str(key) for key in self._keys]
         decision = random.choice(keys)
-        #for final program, remove this print
-        print('RANDOM CHOICE IS ' + decision)
         #this adds relevant words to the list of words encountered in a playthrough
         for value in self._outcome_dict[decision]:
             self._game_list.append(value)
@@ -293,8 +277,6 @@ class Player:
             avg_ww_freq = win_sum/total_ww
         except ZeroDivisionError:
             avg_ww_freq = 0
-        #print('cww: ', cww)
-        #print('avg win word freq: ', avg_ww_freq)
         self._dictionary['CWW'] = cww
         self._dictionary['CWWF'] = cwwf
         self._dictionary['Average WW Freq'] = avg_ww_freq
@@ -315,12 +297,13 @@ class Player:
             avg_lw_freq = loss_sum/total_lw
         except ZeroDivisionError:
             avg_lw_freq = 0
-        #print('clw: ', clw)
-        #print('avg loss word freq: ', avg_lw_freq)
         self._dictionary['CLW'] = clw
         self._dictionary['CLWF'] = clwf
         self._dictionary['Average LW Freq'] = avg_lw_freq
 
+    ''' Name: develop_freq_dict
+        Purpose: to add another dictionary entry containing words and their freqs
+        '''
     def develop_freq_dict(self):
         for tup in self._dictionary['CWWF']:
             self._win_freq_dict[tup[0]] = tup[1]
@@ -334,11 +317,11 @@ class Player:
     def update_game_dict(self, result):
         print('The computer had a ' + result)
         if result == 'WIN':
-            print('ADDED WIN WORDS ', str(self._game_list))
+            #print('ADDED WIN WORDS ', str(self._game_list))
             for word in self._game_list:
                 self._dictionary['WIN'].append(word)
         if result == 'LOSS':
-            print('ADDED LOSS WORDS ', str(self._game_list))
+            #print('ADDED LOSS WORDS ', str(self._game_list))
             for word in self._game_list:
                 self._dictionary['LOSS'].append(word)
         self.save_to_dictionary()

@@ -24,7 +24,6 @@ def get_win_loss(text):
         win_vals = nltk.word_tokenize(elements[1])
         win_vals = [value for value in win_vals if value not in markers]
         win_loss_dict[elements[0]] = win_vals
-        #print(str(win_loss_dict))
 
         text = text[text.find('\n')+1:]
 
@@ -33,7 +32,6 @@ def get_win_loss(text):
         loss_vals = nltk.word_tokenize(elements[1])
         loss_vals = [value for value in loss_vals if value not in markers]
         win_loss_dict[elements[0]] = loss_vals
-        #print(str(win_loss_dict))
 
     except IndexError:
         print('File needs win and loss sequences')
@@ -53,13 +51,11 @@ def get_script(script):
         end = text.find('END')
 
         code = text[start+5:text.find('#')]
-        #print('code: ' + code)
 
         text_bit = text[start+7+len(code):end-1]
         code = 'S' if code == '' else code
         section_dict[code] = text_bit
         text = text[end+4:]
-    #print(section_dict)
 
 '''Name: play_game()
     Purpose: the method to be used in main, initiates the game
@@ -100,10 +96,8 @@ def play_section(section, player):
 
     for key in choice_dict:
         if choice == key:
-            #print(choice_dict[key])
             global win_loss_seq
             win_loss_seq += str(choice_dict[key])
-            #print(win_loss_seq)
         else:
             None
 
@@ -113,7 +107,6 @@ def play_section(section, player):
     if player is not None:
         if result is not None:
             player.update_game_dict(result)
-            #print(player)
 
     #must clear choice_dict in case another section has the same
     #keywords with different values
@@ -133,7 +126,6 @@ def get_options(text):
                 choice_dict[word] = 0
             elif len(choice_dict) % 2 == 1:
                 choice_dict[word] = 1
-    #print(str(choice_dict.items()))
 
 '''Name: get_input()
     Purpose: to check and see if a Player has been passed
@@ -143,8 +135,7 @@ def get_options(text):
              input(), the user's decision'''
 def get_input(decision, ai_input):
     if ai_input is True:
-        #for final program, uncomment this print
-        #print('Computer chose ' + decision)
+        print('Computer chose ' + decision)
         return decision
     else:
         return input()
@@ -175,13 +166,6 @@ def clear():
     end = False
 
 if __name__ == '__main__':
-    '''
+    #for i in range(15):
     player = Player()
-    player.open_dictionary()
-    print(player)'''
-    #play_game('Script.txt')
-    #print('')
-    player = Player()
-    #for i in range (5):
-    play_game('Script2.txt', player)
-    #play_game('Script3.txt', player)
+    play_game('Script.txt', player)
