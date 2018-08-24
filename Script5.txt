@@ -1,0 +1,35 @@
+WIN: 01, 11
+LOSS: 00, 10
+START#
+You stand in the middle of an island.
+In front of you is a CAVE,
+and to your side is a SHIPWRECK.
+END
+START0#
+You enter the cave in front of you,
+and the tunnel splits down two paths!
+You can take the dark path on your RIGHT,
+or you can take the light path on your LEFT.
+END
+START00#
+You enter the path on your right,
+except it is so dark that you cannot see your way!
+You are lost in the dark cave, wandering for eternity.
+END
+START01#
+You take the path on the left,
+and you find a room filled with bountiful and shiny treasure!
+END
+START1#
+You decide to explore the shipwreck.
+You can either CLIMB the rickety wreck,
+or you can carefully WALK inside the wreck.
+END
+START10#
+You decide to try and climb the wreck,
+but you are met with rotting planks and fall to your doom!
+END
+START11#
+You carefully walk through the wreckage,
+and you manage to find a pirate treasure!
+END
